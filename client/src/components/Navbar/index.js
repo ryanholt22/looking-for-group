@@ -1,24 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import AUTH from '../../utils/AUTH';
 import "./navbar.css";
 
-function Navbar() {
-    return (
-        <div>
-            <nav className="nav barStyle">
-                {/*sign in button will toggle a modal*/}
-                <Link to={'/matchform'} className="nLinkStyle">
-                    <a className="nav-link"><i className="fas fa-sign-in-alt"></i> Sign In</a>
-                </Link>
-                <Link to={'/about'} className="nLinkStyle">
-                    <a className="nav-link">About</a>
-                </Link>
-                <Link to={'/'} className="nLinkStyle">
-                    <a className="nav-link">Home</a>
-                </Link>
-            </nav>
-        </div>
-    );
+class Navbar extends Component {
+
+    handleLogin() {
+        AUTH.userLogin();
+    }
+    render() {
+        return (
+            <div>
+                <nav className="nav barStyle">
+                    {/*sign in button will toggle a modal*/}
+                    <div className="nLinkStyle">
+                        <a className="nav-link" onClick={this.handleLogin}><i className="fas fa-sign-in-alt"></i> Sign In</a>
+                    </div>
+                    <Link to={'/about'} className="nLinkStyle">
+                        <span className="nav-link">About</span>
+                    </Link>
+                    <Link to={'/'} className="nLinkStyle">
+                        <span className="nav-link">Home</span>
+                    </Link>
+                </nav>
+            </div >
+        );
+    }
 }
 
 export default Navbar;
