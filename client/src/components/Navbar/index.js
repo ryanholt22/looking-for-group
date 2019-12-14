@@ -16,7 +16,7 @@ class Navbar extends Component {
                     <div className="nLinkStyle">
                         <a className="nav-link" onClick={this.handleLogin}><i className="fas fa-sign-in-alt"></i> Sign In</a>
                     </div>
-                    <Link to={'/about'} className="nLinkStyle">
+                    <Link to={'/login'} className="nLinkStyle">
                         <span className="nav-link">About</span>
                     </Link>
                     <Link to={'/'} className="nLinkStyle">

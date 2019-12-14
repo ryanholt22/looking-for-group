@@ -2,8 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const routes = require('./routes');
-const userInViews = require('./lib/middleware/userInViews');
-const authRouter = require('./routes/authentication/auth');
 const app = express();
 const session = require('express-session');
 const passport = require('passport');
@@ -19,7 +17,7 @@ const strategy = new Auth0Strategy(
         clientID: process.env.AUTH0_CLIENT_ID,
         clientSecret: process.env.AUTH0_CLIENT_SECRET,
         callbackURL:
-            process.env.AUTH0_CALLBACK_URL || 'http://localhost:3000/matchform'
+            process.env.AUTH0_CALLBACK_URL || 'http://localhost:3000/'
     },
 
     (accessToken, refreshToken, extraParams, profile, done) => {
@@ -37,6 +35,7 @@ const sess = {
 
 app.use(express.urlencoded({ extended: true }));;
 app.use(express.json());
+
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
