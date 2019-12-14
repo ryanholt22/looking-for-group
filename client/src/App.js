@@ -5,21 +5,13 @@ import Landing from './pages/landing';
 import MatchPage from './pages/match';
 import Question from './pages/question';
 import Register from './pages/register';
-import './App.css';
-import { useAuth0 } from "./react-auth0-spa";
 import Navbar from './components/Navbar/';
+import './App.css';
 
 function App() {
-  const { loading } = useAuth0();
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
   return (
     <Router>
-      <div className="app">
         <Navbar />
-        </div>
           <Switch>
             <Route exact path='/' component={Landing} />
             <Route exact path='/about' component={About} />
@@ -32,4 +24,3 @@ function App() {
 }
 
 export default App;
-

@@ -4,7 +4,6 @@ import { Col, Row, Container } from '../components/Grid';
 import Jumbotron from '../components/Jumbotron';
 
 class Register extends Component {
-
     render() {
         return (
             <Container>

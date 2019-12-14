@@ -8,13 +8,13 @@
     text-decoration: none;
     color: #B1B1B1;
 }
+.nLinkStyle:active {
+    color: #233243;
+}
 .nav-link{
     background-color:#384757;
     border: none;
     color: #3FB143;
-}
-.nLinkStyle:active {
-    color: #233243;
 }
 .barStyle {
     background-color: #384757;

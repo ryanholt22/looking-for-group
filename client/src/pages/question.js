@@ -5,9 +5,6 @@ import { Col, Row, Container} from '../components/Grid';
 
 
 class Questions extends Component {
-
-
-
     render() {
         return (
             <Container>
@@ -15,7 +12,6 @@ class Questions extends Component {
             </Container>
         );
     }
-
 }
 
 export default Question;
