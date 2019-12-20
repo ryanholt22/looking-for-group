@@ -14,7 +14,7 @@ function App() {
   const { loading } = useAuth0();
 
   if (loading) {
-    return <div className="loadMe">Loading...</div>;
+    return (<div className="loadMe">Loading...</div>);
   }
   return (
     <Router>
